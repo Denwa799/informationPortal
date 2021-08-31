@@ -1,0 +1,17 @@
+.navbar {
+    background-color: #1976d2;
+    height: 50px;
+    color: #fff;
+    font-size: 1.3rem;
+    position: sticky;
+    top: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 30% auto auto auto auto;
+    align-content: center;
+    max-width: 1140px;
+    margin: 0 auto;
+    height: 100%;
+}
