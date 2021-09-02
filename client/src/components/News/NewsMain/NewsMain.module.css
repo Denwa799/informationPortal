@@ -4,10 +4,6 @@
     padding-top: 20px;
 }
 
-.blockTitle {
-    border-bottom: 1px solid #1976d2;
-}
-
 .news {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

@@ -1,0 +1,9 @@
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.blockTitle {
+    border-bottom: 3px solid #1976d2;
+}

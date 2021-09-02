@@ -12,7 +12,6 @@ const NewsMain = (props) => {
     return (
         <div>
             <div className={styles.container}>
-                <h1 className={styles.blockTitle}>Новости Сочи</h1>
                 <div className={styles.news}>
                     {newsElements}
                 </div>
