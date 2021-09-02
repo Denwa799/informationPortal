@@ -9,7 +9,7 @@ const Main = () => {
             <NewsMainContainer section="sochi" region="krasnodarTerritory"/>
 
             <TitleMainContainer section="krasnodarTerritory"/>
-            <NewsMainContainer section="" region="krasnodarTerritory"/>
+            <NewsMainContainer region="krasnodarTerritory"/>
 
             <TitleMainContainer section="moscow"/>
             <NewsMainContainer section="moscow" region="moscowTerritory"/>

@@ -13,29 +13,35 @@ const NewsMain = (props) => {
 
     let news;
 
-    switch (props.section) {
-        case "sochi":
-            news = newsElements.filter(news => news.props.section === "sochi");
-            break;
-        case "krasnodar":
-            news = newsElements.filter(news => news.props.section === "krasnodar");
-            break;
-        default:
-            news = newsElements;
+    debugger;
+    if (props.section != null) {
+        switch (props.section) {
+            case "sochi":
+                news = newsElements.filter(news => news.props.section === "sochi");
+                break;
+            case "krasnodar":
+                news = newsElements.filter(news => news.props.section === "krasnodar");
+                break;
+            case "moscow":
+                news = newsElements.filter(news => news.props.section === "moscow");
+                break;
+            default:
+                news = newsElements;
+        }
+    } else if (props.region != null && !props.section) {
+        switch (props.region) {
+            case "krasnodarTerritory":
+                news = newsElements.filter(news => news.props.region === "krasnodarTerritory");
+                break;
+            case "moscowTerritory":
+                news = newsElements.filter(news => news.props.region === "moscowTerritory");
+                break;
+            default:
+                news = newsElements;
+        }
     }
 
     debugger;
-
-    switch (props.region) {
-        case "krasnodarTerritory":
-            news = newsElements.filter(news => news.props.region === "krasnodarTerritory");
-            break;
-        case "moscowTerritory":
-            news = newsElements.filter(news => news.props.region === "moscowTerritory");
-            break;
-        default:
-            news = newsElements;
-    }
 
 
     return (
