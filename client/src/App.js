@@ -10,12 +10,13 @@ function App() {
         <div className="App">
             <Navbar/>
             <TitleMainContainer section="sochi"/>
-            <NewsMainContainer/>
-            <NewsMainContainer/>
+            <NewsMainContainer section="sochi" region="krasnodarTerritory"/>
 
             <TitleMainContainer section="krasnodarTerritory"/>
-            <NewsMainContainer/>
-            <NewsMainContainer/>
+            <NewsMainContainer section="" region="krasnodarTerritory"/>
+
+            <TitleMainContainer section="moscow"/>
+            <NewsMainContainer section="moscow" region="moscowTerritory"/>
         </div>
     );
 }

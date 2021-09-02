@@ -12,6 +12,9 @@ const TitleMain = (props) => {
         case "krasnodarTerritory":
             caseTitle = titleElements[2];
             break;
+        case "moscow":
+            caseTitle = titleElements[3];
+            break;
         default:
             caseTitle = titleElements[0];
     }

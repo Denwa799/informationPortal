@@ -7,13 +7,42 @@ const NewsMain = (props) => {
     let newsElements = props.news.map(item => <NewsItem title={item.title}
                                                         id={item.id}
                                                         preview={item.preview}
-                                                        img={item.img}/>);
+                                                        img={item.img}
+                                                        section={item.section}
+                                                        region={item.region}/>);
+
+    let news;
+
+    switch (props.section) {
+        case "sochi":
+            news = newsElements.filter(news => news.props.section === "sochi");
+            break;
+        case "krasnodar":
+            news = newsElements.filter(news => news.props.section === "krasnodar");
+            break;
+        default:
+            news = newsElements;
+    }
+
+    debugger;
+
+    switch (props.region) {
+        case "krasnodarTerritory":
+            news = newsElements.filter(news => news.props.region === "krasnodarTerritory");
+            break;
+        case "moscowTerritory":
+            news = newsElements.filter(news => news.props.region === "moscowTerritory");
+            break;
+        default:
+            news = newsElements;
+    }
+
 
     return (
         <div>
             <div className={styles.container}>
                 <div className={styles.news}>
-                    {newsElements}
+                    {news}
                 </div>
             </div>
         </div>
