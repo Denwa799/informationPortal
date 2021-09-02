@@ -10,7 +10,7 @@
 }
 
 .App {
-    background-color: #f1f1f1;
+    background-color: var(--divider-color);
     min-height: 200vh;
-    color: #212121;
+    color: var(--primary-text);
 }

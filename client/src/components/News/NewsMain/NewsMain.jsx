@@ -13,7 +13,6 @@ const NewsMain = (props) => {
 
     let news;
 
-    debugger;
     if (props.section != null) {
         switch (props.section) {
             case "sochi":
@@ -40,8 +39,6 @@ const NewsMain = (props) => {
                 news = newsElements;
         }
     }
-
-    debugger;
 
 
     return (

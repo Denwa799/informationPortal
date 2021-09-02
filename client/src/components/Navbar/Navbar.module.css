@@ -1,7 +1,7 @@
 .navbar {
-    background-color: #1976d2;
+    background-color: var(--primary-color);
     height: 50px;
-    color: #fff;
+    color: var(--text);
     font-size: 1.3rem;
     position: sticky;
     top: 0;
@@ -14,4 +14,14 @@
     max-width: 1140px;
     margin: 0 auto;
     height: 100%;
+}
+
+.link {
+    color: var(--text);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.active {
+    color: var(--accent-color);
 }
