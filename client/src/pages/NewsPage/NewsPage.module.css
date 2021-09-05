@@ -1,0 +1,19 @@
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.title {
+    border-bottom: 3px solid var(--primary-text);
+    color: var(--primary-color);
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+}
+
+.text {
+    padding-top: 20px;
+}

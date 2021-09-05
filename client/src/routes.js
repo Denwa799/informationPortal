@@ -3,6 +3,7 @@ import Main from "./pages/Main";
 import News from "./pages/News";
 import GameNews from "./pages/GameNews"
 import AnimeNews from "./pages/AnimeNews"
+import NewsPageContainer from "./pages/NewsPage/NewsPageContainer";
 
 export const publicRoutes = [
     {
@@ -12,6 +13,10 @@ export const publicRoutes = [
     {
         path: NEWS_ROUTE,
         Component: News
+    },
+    {
+        path: NEWS_ROUTE +"/:id",
+        Component: NewsPageContainer
     },
     {
         path: GAMENEWS_ROUTE,
