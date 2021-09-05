@@ -9,9 +9,9 @@ const Navbar = (props) => {
             <div className={styles.container}>
                 <NavLink className={styles.link} to={MAIN_ROUTE}>AllNews</NavLink>
                 <NavLink className={styles.link} activeClassName={styles.active} to={MAIN_ROUTE} exact={true}>Главная</NavLink>
-                <NavLink className={styles.link} activeClassName={styles.active} to={NEWS_ROUTE}>Новости</NavLink>
-                <NavLink className={styles.link} activeClassName={styles.active} to={GAMENEWS_ROUTE}>Игры</NavLink>
-                <NavLink className={styles.link} activeClassName={styles.active} to={ANIMENEWS_ROUTE}>Аниме</NavLink>
+                <NavLink className={styles.link} activeClassName={styles.active} to={NEWS_ROUTE}>Новости в мире</NavLink>
+                <NavLink className={styles.link} activeClassName={styles.active} to={GAMENEWS_ROUTE}>Игровые новости</NavLink>
+                <NavLink className={styles.link} activeClassName={styles.active} to={ANIMENEWS_ROUTE}>Аниме новости</NavLink>
             </div>
         </div>
     );
