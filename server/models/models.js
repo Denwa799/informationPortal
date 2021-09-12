@@ -1,7 +1,7 @@
 const sequelize = require('../db')
 const {DataTypes} = require('sequelize')
 
-const NewsGlobal = sequelize.define('news', {
+const GlobalNews = sequelize.define('news', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     title: {type: DataTypes.STRING, allowNull: false},
     //symbolCode: {type: DataTypes.STRING, allowNull: false},
@@ -71,17 +71,17 @@ const NewsSections = sequelize.define('news_sections', {
 })
 
 
-NewsGlobal.hasOne(Regions)
-Regions.belongsToMany(NewsGlobal, {through: NewsRegions})
+GlobalNews.hasOne(Regions)
+Regions.belongsToMany(GlobalNews, {through: NewsRegions})
 
-NewsGlobal.hasOne(Sections)
-Sections.belongsToMany(NewsGlobal, {through: NewsSections})
+GlobalNews.hasOne(Sections)
+Sections.belongsToMany(GlobalNews, {through: NewsSections})
 
 Regions.hasMany(Sections)
 Sections.belongsTo(Regions)
 
 module.exports = {
-    NewsGlobal,
+    GlobalNews,
     GameNews,
     AnimeNews,
     Regions,
