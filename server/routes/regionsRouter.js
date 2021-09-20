@@ -4,7 +4,7 @@ const regionsController = require('../controllers/regionsController')
 
 router.post('/', regionsController.create)
 router.get('/', regionsController.getAll)
-router.get('/:id',)
+router.get('/:id', regionsController.getOne)
 
 
 module.exports = router
