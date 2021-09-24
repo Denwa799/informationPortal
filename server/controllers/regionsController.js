@@ -32,6 +32,21 @@ class RegionsController {
             next(ApiError.badRequest((e.message)))
         }
     }
+
+    async delete(req, res, next) {
+        try {
+            const {id} = req.params
+            if (!id) {
+                res.status(400).json({message: 'Id не указан'})
+            }
+            const region = await Regions.destroy(
+                {where: {id}}
+            )
+            return res.json(region)
+        } catch (e) {
+            next(ApiError.badRequest((e.message)))
+        }
+    }
 }
 
 module.exports = new RegionsController()
