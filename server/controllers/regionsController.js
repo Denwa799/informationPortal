@@ -12,6 +12,7 @@ class RegionsController {
         const regions = await Regions.findAll()
         return res.json(regions)
     }
+
     async getOne(req, res) {
         const {id} = req.params
         const region = await Regions.findOne(
