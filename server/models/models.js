@@ -8,8 +8,8 @@ const GlobalNews = sequelize.define('news', {
     preview: {type: DataTypes.STRING},
     text: {type: DataTypes.STRING, allowNull: false},
     img: {type: DataTypes.STRING, allowNull: false},
-    regionName: {type: DataTypes.STRING, allowNull: false},
-    sectionName: {type: DataTypes.STRING, allowNull: false},
+    //regionName: {type: DataTypes.STRING, allowNull: false},
+    //sectionName: {type: DataTypes.STRING, allowNull: false},
     //tags: {type: DataTypes.STRING, allowNull: false},
 })
 
@@ -35,17 +35,17 @@ const AnimeNews = sequelize.define('anime_news', {
 
 const Regions = sequelize.define('regions', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    name: {type: DataTypes.STRING, allowNull: false},
+    name: {type: DataTypes.STRING, allowNull: false, unique: true},
 })
 
 const Sections = sequelize.define('sections', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    name: {type: DataTypes.STRING, allowNull: false},
+    name: {type: DataTypes.STRING, allowNull: false, unique: true},
 })
 
 const SectionTitle = sequelize.define('section_title', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    name: {type: DataTypes.STRING, allowNull: false},
+    name: {type: DataTypes.STRING, allowNull: false, unique: true},
 })
 
 /*

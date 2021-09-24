@@ -1,11 +1,10 @@
 const Router = require('express')
 const router = new Router()
+const globalNewsController = require('../controllers/globalNewsController')
 
-router.post('/',)
-router.get('/', (req, res) => {
-    res.json({message: 'newsWorking'})
-})
-router.get('/:id',)
+router.post('/', globalNewsController.create)
+router.get('/', globalNewsController.getAll)
+router.get('/:id', globalNewsController.getOne)
 
 
 module.exports = router
