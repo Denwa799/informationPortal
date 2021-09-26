@@ -65,12 +65,8 @@ const NewsSections = sequelize.define('news_sections', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
 })
 
-
-GlobalNews.hasOne(Regions)
-Regions.belongsToMany(GlobalNews, {through: NewsRegions})
-
-GlobalNews.hasOne(Sections)
-Sections.belongsToMany(GlobalNews, {through: NewsSections})
+Sections.hasOne(GlobalNews)
+GlobalNews.belongsToMany(Sections, {through: NewsSections})
 
 Regions.hasMany(Sections)
 Sections.belongsTo(Regions)

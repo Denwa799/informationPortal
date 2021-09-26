@@ -23,20 +23,16 @@ class GlobalNewsController {
 
     async getAll(req, res, next) {
         try {
-            const {sectionId, regionId} = req.body
+            let {sectionId, limit, page} = req.query
+            page = page || 1
+            limit = limit || 9
+            let offset = page * limit - limit
             let news
 
-            if (!sectionId && !regionId) {
-                news = await GlobalNews.findAll()
-            }
-            if (sectionId && !regionId) {
-                news = await GlobalNews.findAll({where: {sectionId}})
-            }
-            if (!sectionId && regionId) {
-                news = await GlobalNews.findAll({where: {regionId}})
-            }
-            if (sectionId && regionId) {
-                news = await GlobalNews.findAll({where: {sectionId, regionId}})
+            if (sectionId) {
+                news = await GlobalNews.findAndCountAll({where: {sectionId}, limit, offset})
+            } else {
+                news = await GlobalNews.findAndCountAll({limit, offset})
             }
 
             return res.json(news)

@@ -23,7 +23,12 @@ class AnimeNewsController {
 
     async getAll(req, res, next) {
         try {
-            let news = await AnimeNews.findAll()
+            let {limit, page} = req.query
+            page = page || 1
+            limit = limit || 9
+            let offset = page * limit - limit
+
+            let news = await AnimeNews.findAndCountAll({limit, offset})
             return res.json(news)
         } catch (e) {
             next(ApiError.badRequest((e.message)))
