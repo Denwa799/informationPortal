@@ -33,6 +33,9 @@ class AnimeNewsController {
     async getOne(req, res, next) {
         try {
             const {id} = req.params
+            if (!id) {
+                res.status(400).json({message: 'Id не указан'})
+            }
             const news = await AnimeNews.findOne(
                 {
                     where: {id}
