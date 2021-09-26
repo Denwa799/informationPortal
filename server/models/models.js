@@ -43,11 +43,6 @@ const Sections = sequelize.define('sections', {
     name: {type: DataTypes.STRING, allowNull: false, unique: true},
 })
 
-const SectionTitle = sequelize.define('section_title', {
-    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    name: {type: DataTypes.STRING, allowNull: false, unique: true},
-})
-
 /*
 const tags = sequelize.define('news', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -86,7 +81,6 @@ module.exports = {
     AnimeNews,
     Regions,
     Sections,
-    SectionTitle,
     User,
     NewsRegions,
     NewsSections,
