@@ -45,8 +45,18 @@ class GlobalNewsController {
         }
     }
 
-    async getOne(req, res) {
-
+    async getOne(req, res, next) {
+        try {
+            const {id} = req.params
+            const news = await GlobalNews.findOne(
+                {
+                    where: {id}
+                }
+            )
+            return res.json(news)
+        } catch (e) {
+            next(ApiError.badRequest((e.message)))
+        }
     }
 }
 
